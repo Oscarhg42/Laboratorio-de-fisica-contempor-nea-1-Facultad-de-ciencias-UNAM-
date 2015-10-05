@@ -1,0 +1,447 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[utf8]{inputenc} % Soporte para acentos
+\usepackage[T1]{fontenc}    
+\usepackage[spanish,mexico]{babel} % Español
+
+% Soporte de símbolos adicionales (matemáticas)
+\usepackage{amsmath}		
+\usepackage{amssymb}		
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{booktabs}
+% Para inserción de imagenes
+\usepackage[pdftex]{graphicx}
+
+\usepackage{epstopdf}
+
+% Algunos comandos y ambientes para tablas
+\usepackage{tabularx}
+
+% Para citas bibliograficas
+\usepackage{cite}
+
+\usepackage[lmargin=3cm,rmargin=3cm,top=2cm,bottom=2cm]{geometry}
+
+% Indicamos una separación entre los párrafos
+\parskip=3mm
+
+% Eliminamos la sangría de los párrafos
+\parindent=0mm
+
+
+\begin{document}
+\thispagestyle{empty}
+\setlength{\unitlength}{1 cm} %Especificar unidad de trabajo
+\thispagestyle{empty}
+\begin{picture}(18,4)
+\put(0,0){\includegraphics[width=4cm,height=4cm]{unam.jpg}}
+\put(11.5,0){\includegraphics[width=4cm,height=4cm]{ciencias.jpg}}
+\end{picture}
+\\
+\\
+\begin{center}
+\textbf{{\Large Universidad Nacional Autónoma de México}\\[0.5cm]
+{\Large Facultad de Ciencias}}\\ [1.5cm]
+{\large Laboratorio de Física Contemporánea}\\[1.25cm]
+{\Large Práctica 2}\\[1.25cm]
+{\LARGE \textbf{Punta de Langmuir.}}\\[1.25cm]
+{\Large Oscar Hurtado González}\\  {oscar\_hg@ciencias.unam.mx}\\ [1cm]
+ {\small En colaboración con  Peter Nava \\  {\small nk\_peter@yahoo.com.mx} }\\ [3cm]
+
+México, D.F.,  a Martes 6 de Octubre 2015
+
+
+\end{center}
+\newpage
+
+ \textbf{Objetivos} 
+ 
+ Los objetivos principales de esta práctica consisten en caracterizar un plasma de descarga de gas de argón [Ar] generado en un triodo 0A4G, midiendo su temperatura y desidad electrónica a través del análisis se su curva característica $I \ vs. \ V$. Tal curva es obtenida a partir de la punta (ó también llamada sonda) de Langmuir
+
+\textbf{Resumen}
+
+\tableofcontents
+\newpage
+
+\section{Introducción y marco teórico}
+El concepto más común que se tiene  de un plasma es que éste es un gas caliente ionizado. Tal concepto fue introducido por Irving Langmuir. Los plasmas son conductores eléctricos al igual que los metales y por tanto, un plasma consiste de un gas con muchos electrones libres, iones y átomos sin ionizar.
+
+Los plasmas están en casi todos lados del universo; están presentes en algunos fenómenos en la superficie de la tierra como los relámpagos y las aureoras boreales en los polos. En la primera mitad del siglo XX los ingenieros eléctricos, entre ellos Irvng Langmuir, trabajaron para comprender los plasmas ``industriales'' que se utilizaron para  tener bulbos de luz incandescentes más eficientes. Trabajando con tubos de descarga de gas para este propósito, Langmuir inventó pruebas de diagnóstico como la punta (o sonda) que lleva su nombre. Recibió en 1932 el Nobel por sus trabajos hechos sobre plasmas.
+
+También Edward Appleton sugirió que debía haber un conductor rodeando a la tierra, al que denominó como \textit{ionósfera} (en  1947 recibió el Nobel por este descubrimiento). 
+
+En la segunda mitad del siglo XX, la física de plasmas estaba conectada con problemas no tan placenteros como política, espionaje y turbulencia, y, a medida que las investigaciones se desarrollaban, se podía notar que los plasmas resultaron ser un tema difícil de entender.
+
+En este siglo los plasmas ``industriales '' son de nuevo de interés por sus diversas aplicaciones como la manufactura de microprocesadores, y displays de plasma para televisiones HD.
+
+Antes de profundizar en la punta de Langmuire para medir características del plasma, se abordan conceptos acerca de la teoría de plasmas de gas de descarga.
+
+\subsection*{Plasma de gas de descarga.}
+
+Boris Smirnov   define un \textit{plasma de gas  de descarga}  como un estado auto consistente de un gas que es  ionizado como resultado de pasar una corriente eléctrica a través del gas bajo la acción de campos eléctricos externos. Estos plasmas son un tipo de plasmas de baja temperatura. \cite{libro}
+
+\textit{Usualmente} un gas de descarga se confina en un tubo cilindrico en donde el gas está a baja presión y  en los extremos del tubo se colocan dos placas paralelas o electrodos que se encuentran a una diferencia de potencial $V_s$.
+
+Los electrones originados en el cátodo y los iones positivos cerca del ánodo son acelerados en direcciones opuestas, chocan y transfieren energía.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{tubo1.jpg}
+\caption{Estructura del tubo de gas de descarga.}
+\end{figure}
+
+La figura 1 muestra la estructura física básica de un tubo de gas de descarga y del plasma generado en su interior. No todos los componentes de la estructura se encuentran en todas las descargas, pues éstas dependen de la presión, el voltaje en los electrodos, y las dimensiones del tubo (estos parámetros se toman en cuenta en la llamada y bien conocida ley de Paschen). Cambios en estos parámetros, cambian la apariencia del plasma generado dentro del tubo.
+
+El proceso en el cual el gas dentro del tubo se ioniza lo suficiente para que se pueda observar un plasma de gas de descarga se le conoce como \textit{proceso ó mecanismo  de rompimiento}. Estos porcesos de rompimiento se producen debido principalmente a electrones libres presentes en el gas dentro del tubo. Tales electrones, bajo la acción del campo eléctrico producido por los electrodos, son acelerados desde el cátodo hacia el ánodo y adquieren una enérgia cinética igual a $\frac{1}{2}m_ev^2=e^- V_s$ (usualmente expresada en electrón-volts $1eV=1.6\times10^{-19}J$). Estos electrones que viajan hacia en ánodo, colisionan con las moléculas del gas presentes entre los electrodos y en estas condiciones, parte de la energía cinética de los electrones se transmite a las moléculas neutras.  Si éstas moléculas ganan la energía suficiente, se pueden ionizar por tales colisiones.\textit{La cantidad promedio de colisiones ionizantes producidas por un electrón por unidad de deriva a traves del tubo} se cuantifica con el \textbf{\textit{primer coeficiente de Townsend}} (ó \textbf{\textit{coeficiente Townsend de ionización}}. (Matemáticamente se denotará por la letra $\alpha$ a tal coeficiente). 
+
+Las moléculas neutras del gas al ser ionizadas, liberan electrones que debido al campo eléctrico  se aceleran, comienzan a viajar hacia el cátodo  y éstos tienen la posibilidad de ionizar a otras moléculas neutras de gas y así se produce un \textit{efecto avalancha (de electrones).} 	
+ 
+Tal efecto avalancha es uno de los dos \textit{mecanismos de rompimiento mejor conocidos} (también se le conoce como \textit{proceso de rompimiento de \textbf{Townsend}}. Este efecto puede ser explicado brevemente suponiendo que inicialmente existe un electrón libre en el gas. Si el campo provee a electrón libre la energía suficiente para ionizar una molécula neutra por colisión simple, entonces  esto resulta en dos electrones libres (el original, más el que salió de la molécula ionizada) y un ion positivo. Estos dos electrones pueden ser capaces de causar más colisiones ionizantes para dar lugar a tener 4 electrones y 3 iones positivos y así sucesivamente. Este proceso es acumulativo y el número de electrones crece exponencialmente. En el espacio de tan solo unos cuantos milimetros se pueden llegar a producir millones de electrones. La figura 2 es una figura esquemática del proceso de avalancha.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{avalancha.jpg}
+\caption{Efecto avalancha de electrones.}
+\end{figure}
+
+Se puede haer un primer análisis matemático de esta situación haciendo las siguientes consideraciones.
+
+Cuando el voltaje aplicado en los electrodos se incrementa, la corriente a través del gas se incrementa lentamente, a medida que los electrones emitidos del cátodo  viajan a través del tubo.  La ionización de los átomos del gas causada por estos electrones es el proceso más importante en el rompimiento de Townsend pero este proceso por si solo no es suficiente para producir el rompimiento.
+
+Sean ahora $ n_0=$ el número de electrones por segundo emitidos del cátodo, $n_x=$ el número de electrones por segundo moviendose a una distancia $x$ medida desde el cátodo, $\alpha=$ el \textit{número de colisiones ionizantes, en promedio, hechas por un electrón por unidad de deriva en la dirección del campo (\textbf{primer coeficiente de Townsend}}. Así $\frac{1}{\alpha}$ será la distancia promedio recorrida por un electrón entre 
+colisiones ionizantes.
+
+Si ahora se considera una sección transversal al tubo con grosor $\Delta x$ estando a una distancia $x$ del cátodo, entonces como por cada colisión ionizante se produce un nuevo electrón, la cantidad de electrones $n_x$ aumenta $\Delta n_x$. Tal cantidad es proporcional por definición al coeficiente de Townsend $\alpha$ multiplicado por el número de electrones en el itervalo $\Delta x$.
+
+Es decir que 
+
+$$ \Delta n_x=\alpha n_x \Delta x$$
+
+tomando el límite cuando el grosor de la sección transversal  tiende a cero:
+
+$$dn_x=\alpha n_x dx$$
+
+$\Rightarrow$
+
+$$\frac{dn_x}{n_x}=\alpha dx$$
+
+Resolviendo la ecuación diferencial integrando de $n_0$ a $n_x$ y de $0$ a $x$ se obtiene :
+
+\begin{equation}
+ n_x=n_0e^{\alpha x}  \label{nx}
+\end{equation}
+
+Si el ánodo está a una distancia $d$ del cátodo, entonces el número de electrones por segundo  que estarán chocando con el ánodo será $ n_d=n_0e^{\alpha d}$. Por tanto en promedio, cada electrón que sale del cátodo produce en promedio $\frac{n_d-n_0}{n_0}$ electrones libres  nuevos en el gas.
+
+Ahora bien, en el estado estacionario, la corriente en el circuito que forman los electrodos, el gas y la fuente de voltaje, debe ser proporcional a la cantidad de electrones que salen del cátodo y llegan al ánodo. Por tanto se puede argüir que la corriente está dada por 
+
+\begin{equation}
+ I=I_0 e^{\alpha d} \label{corriente1}
+\end{equation}
+
+Por otro lado, falta considerar que pasa con los iones que chocan en el ánodo, los cuales, si tienen la energía cinética suficiente, podrán liberar más electrones del cátodo. Así, sea $\gamma=$ \textit{el número de electrones ``secundarios'' producidos en promedio en el cátodopor cada colisión ionizante que se produce en el tubo .} o bién se puede argüir que esto es equivalente a \textit{la probabilidad de que se libere un electrón secundario por cada ion que choca contra el cátodo.} A $\gamma$ se le llama \textbf{\textit{segundo coeficiente de Townsend.}}
+
+Sean también $n_0=$ número de electrones primarios por segundo  emitidos en el cátodo por simple acción del campo electromagnético, $n_0^{'} =$ número de electrones secundarios por segundo producidos en el cátodo debido al impacto de los iones atraídos hacia éste por acción del campo, y $n_0^{''}=  $número total de electrones por segundo que salen del cátodo.
+
+$\Rightarrow$
+$$ n_0^{''}=n_0+n_0^{'} $$
+
+Luego, en promedio, cada electrón produce $e^{\alpha d}-1$ colisiones ionizantes en su camino entre el cátodo y el ánodo. Entonces el número total  de colisiones ionizantes por segundo será $n_0^{''}$ multiplicado por $e^{\alpha d}-1$. Así, por definición del segundo coeficiente de Townsend, $\gamma$,  se tiene que
+\begin{equation}
+\gamma=\frac{n_0^{'}}{n_0^{''}(e^{\alpha d}-1)} \label{2docoef}
+\end{equation}
+Despejando $n_0^{'}$, y substituyéndolo en $n_0^{''}=n_0+n_0^{'}$  se obtiene finalmente para $n_0^{''}$
+\begin{equation}
+n_0^{''}=\frac{n_0}{1-\gamma(e^{\alpha d}-1)} \label{relacionalfagamma}
+\end{equation}
+
+Entonces substituyendo en la ecuación 1 para $x=d$, se obtiene para el número de electrones que llegan al cátodo:
+$$n_d=\frac{n_0e^{\alpha d}}{1-\gamma (e^{\alpha d }-1)},$$
+
+y por tanto la corriente será $$I=\frac{I_0e^{\alpha d}}{1-\gamma (e^{\alpha d }-1)}$$
+
+Esta ecuación describe el incremento de la corriente en el tubon antes de que el rompimiento del gas ocurra y se produzca el plasma. Fisicamente el rompimiento es tener una corriente $I\rightarrow \inf$. Así, se puede concluir 	que \textit{el rompimiento de un gas se puede caracterizar a partir de los coeficientes de Townsend} y con la condición:
+
+$$\gamma(e^{\alpha d}-1)=1 $$
+
+A esta condición se le denomina \textbf{\textit{criterio de Townsend para el rompimiento de gas.}}
+
+Habiendo hecho este análisis matemático del proceso de rompimiento del gas, es conveniente volver a la figura 1 para describir cualitativamente las zonas que se pueden observar en el tubo de gas de decarga. Se describirá las zonas del tubo de izquierda a derecha según la figura 1.
+
+\textbf{Espacio Oscuro Aston (Aston Darkspace).}
+
+Es una delgada región junto al cátodo que contiene una capa de carga negativa. Por tanto aquí hay un campo electrico fuerte. Los electrones son acelerados a través de este espacio y es en esta región  donde los electrones iniciales superan en numero a los iones positivos. La densidad y energía cinética de los electrones no es suficiente para producir exitaciones en los electrones de los  átomos del gas y por tanto no hay emisiones de fotones y por tanto esta zona se ve oscura.
+
+\textbf{Brillo de cátodo (Cathode glow).}
+
+Aqui la energía de los elctrones es suficiente para exitar los átomos y entoces producir un ligero brillo que generalmente es de color rojo. Esta zona tiene una realativamente alta densidad de iones. El grosor de esta capa depende del tipo de gas y la presión en el tubo. En algunas ocasiones esta zona se pega demasiado al cátodo enmascarando el espacio oscuro Aston.
+
+\textbf{Espacio oscuro de cátodo (Cathode dark space).}
+
+Es una zona relativamente oscura justo después del brillo de cátodo que tiene un campo eléctrico relativamente intenso una densidad de iones realtiva grande. Debido a esto es una zona con carga positiva. y por tanto el espacio oscuro de cátodo, el brillo de cátodo y el epacio oscuro aston forman una región que neutraliza casi todo el campo eléctrico causando que el resto del plasma en el tubo esté sometido a campos eléctricos de intensidades bajas.
+
+\textbf{Brillo negativo (Negrative glow).}
+
+Esta es la región de mayor intesidad en el brillo del plasma.  Los electrones que salen del cátodo al llegar a esta región han sido acelerados lo suficiente , adquiriendo una gran energía cinética, colisionan con los átomos del gas ionizándolos, y algunos otros electrones que no ha sido acelerados lo suficiente, no ionizan los átomos al colisionar pero si los exitan lo suficiente como para que emitan fotones y se vea el brillo del plasma. Después de colisionar, los electrones pierden energía cinética.  y por tanto dejan de poseer la energía cinética suficiente para exitar a los átomos y vuelve a haber otra región oscura llamada \textit{espacio oscuro de Faraday}.
+
+\textbf{Espacio oscuro de faraday (Faraday dark space).}
+
+La energía de los electrones es baja en esta región y el campo eléctrico también es pequeño. En esta región se presenta el fenómeno de la recombinación y difusión de los electrones en las paredes del tubo, lo cual produce que la densidad de los electrones se vea disminuida.
+
+A partir de la región de faraday comienza la parte principal de un plasma de gas de descarga, que es la \textit{columna positiva}.
+
+\textbf{Columna positiva (Positive column)}.
+
+Es la región más grade de una descarga normal y \textit{la más importante} (inclusive algunos autores considera que sólo esta región es a lo que se debería llamar plasma),  y la que se puede apreciar con mayor facilidad a simple vista. Aquí el plasma es quasi-neutral (es decir que las densidades de iones y de electrones son casi iguales $n_e \approx n_i$). El campo eléctrico es débil (típicamente del orden de $1eV/cm$) pero lo suficientemente grande como proveer a los electrones de la energía cinética suficiente para ionizar y exitar los átomos del gas. La columna positiva es una larga y uniforme modalidad de brillo, execpto cuando perturbaciones producen \textit{estrías u ondas de ionización (también conocidas como ondas de Alfvén.} Las densidades de los electrones son típicamente del orden de $10^{15},10^{16}$ electrones por $m^3$ y las temperaturas están entre $1eV \sim 2eV$. 
+
+\textbf{Brillo de ánodo (Anode glow)}.
+
+Esta región es usualmente un poco  más brillante que  la columna positiva y no siempre se presenta en los experimentos. Esta es la frontera de lo que se conoce como envoltura del ánodo.
+
+\textbf{Espacio oscuro de ánodo (Anode dark space)}.
+
+El espacio entre el brillo de ánodo y el ánodo es la envoltura de ánodo. Es una delgada capa de carga eléctrica que puede ser positiva (es decir compuesta de átomos ionizados) ó negativa (compuesta de electrones). Esto depende del tamaño relativo del ánodo relativo a la magnitud de la densidad de corriente que esté condiciendo. Aquí nuevamente el campo eléctrico aumenta de magnitud.
+
+\subsection*{Teoría de Langmuir.}
+
+Habiendo discutido los elementos básicos de un plasma de gas de descarga se aborda ahora la teória matemática que se utiliza para caracterizar tal plasma a partir del experimento diseñado por Langmuir (sonda de Langmuir).
+
+El primer comentario que debe hacerse es que si se introduce un pequeño alambre dentro de un plasma, la superficie del alambre será bombardeada por electrones, iones y átomos neutros. En ausencia de fuerzas eléctricas, la razón de impacto por $m^2$ está dada por
+
+\begin{equation}\label{J1}
+J=\frac{1}{4}n \langle  v \rangle=\frac{1}{4}n \ \sqrt[]{\frac{8kT}{\pi M}} 
+\end{equation}
+ en donde $n$ es la densidad de las partículas, $\langle v \rangle$ su velocidad promedio.
+ 
+ Si las partículas obedecen la distribución de Maxwell-Boltzmann, entonces la velocidad promedio está dad en función de la temperatura y de la masa M de las partículas. Como la masa de los electrones es mucho menor que la de los átomos ionizados entonces la velocidad promedio de los electrones será mucho mayor que la de los iones y por tanto el alambre recolectará muchos más electrones que iones y entonces terminará con una carga negativa. La sobre colección de electrones se detendrá solo cuando la carga negativa creciente reduzca la corriente de los electrones y comience a atraer iones para producir una corriente positiva de iones de tal forma que se alcance un balance entre corrientes y la \textit{corriente total} que fluye a través del alambre \textit{sea cero}. La diferencia de potencial entre el alambre y la tierra (ó punto de potencial cero), que corresponde a dicho punto de equilibrio, se le llama \textbf{\textit{voltaje flotante, $V_f $}}. 
+ 
+Ahora, recurriendo a  la física estadística , suponiendo que el sistema se encuentra a una temperatura $T$, sea $P_E$ la densidad de  probabilidad de hallar al sistema en un  microestado con energía $E$, está dada por (Landau \cite{landau}): 
+$$ P_E(p,q)= \frac{1}{Z}e^{-\beta E(p,q)}$$
+
+con  $\beta=kT$, $Z$ la función de partición del sistema y $(p,q)$ son las coordenadas en el espacio fase del sistema (en general para un  sitema de N partículas $\mathbf{p} = (\mathbf{p}_1,\mathbf{p}_2,...,\mathbf{p}_N) $ y $ \mathbf{q}=(\mathbf{q}_1,...,\mathbf{q}_N)$).
+
+La función de partición $Z$, es 
+
+$$ Z=\int\int dpdq e^{-\beta E(p,q)}$$
+
+en donde las integrales se extienden en todo el espacio fase (p,q) del sistema.
+
+Para el caso particular del tubo de gas de descarga, la energía de $N$ electrones está dada por
+
+$$E=\sum_{i=1}^N(\frac{1}{2}m_ev^2-eV)=(\sum_{i=1}^N\frac{p^2}{2m})-eNV$$
+
+en donde se ha hecho la suposición  de que $V$ es constante a lo largo del tubo (sin esa aproximación tendríamos que hacer $E=\sum_{i=1}^{\infty}(\frac{1}{2}m_ev_i^2-eV_i)$ con el subíndice $i$ denotando al i-ésimo electrón).
+
+Como el interés está principalmente  en la distribución de velocidades de los electrones que están en el plasma, se integra la densidad de probabilidad  sobre la parte espacial del espacio fase ($\mathbf{q}$).
+Debido a que los electrones son estadísticamente independientes se tiene que la función de partición $Z$, se puede escribir como 
+$$  Z=(z_1)^N$$
+siendo $z_1$ la función de partición de un electrón dada por:
+\begin{equation*}
+\begin{split}
+z_1&=\int\int dp^3dq^3e^{-\beta(\frac{p^2}{2m}-eV)}\\
+&=\left( \int_{\mathcal{V}} dq e^{-\beta eV}\right) \left( \int_{-\infty}^{\infty} dp_x e^{\beta \frac{p_x}{2m}}\int_{-\infty}^{\infty} dp_y e^{\beta \frac{p_y}{2m}}\int_{-\infty}^{\infty} dp_z e^{\beta \frac{p_z}{2m}} \right)\\
+\Rightarrow \\
+z_1&= \mathcal{V} e^{-\beta eV} \left(\sqrt[]{\frac{2m\pi}{\beta}}\right) ^3
+\end{split}
+\end{equation*}
+en donde $\mathcal{V}$ es el volumen que ocupa el sistema y se ha utilizado la itegral Gaussiana $\int_{-\infty}^{\infty}e^{-\alpha x^2}dx=\sqrt[]{\frac{\pi}{\alpha}}$
+
+Con esta función de partición $z_1$ se puede contestar a la pregunta de cual es la probabilidad de que el momento  de un electrón esté entre $\mathbf{p}$ y $\mathbf{p}+d\mathbf{p}^3$. 
+
+\begin{equation*}
+\begin{split}
+\rho_e (\mathbf{p})d\mathbf{p}^3&=\frac{1}{z_1}\left (\int d\mathbf{q}^3 e^{-\beta(\frac{\mathbf{p}^2}{2m}-eV)}\right) d\mathbf{p}^3\\
+\Rightarrow\\
+\rho_e (\mathbf{p})d\mathbf{p}^3&= \left( \frac{\beta}{2m\pi} \right) ^{3/2}e^{-\beta\frac{\mathbf{p^2}}{2m}}d\mathbf{p}^3
+\end{split}
+\end{equation*}
+Para tener explictamente la distribución de las velocidades y no de los momentos se hace el cambio de variable $\mathbf{p}=m\mathbf{v}$ y como no interesan las direcciónes de los electrones sino únicamente su magnitud se hace el cambio de coordenadas cartesianas $\mathbf{v}$ a esféricas.
+\begin{equation}\label{maxcart}
+\begin{split}
+\rho_e(\mathbf{v})d\mathbf{v}^3&= \left( \frac{\beta m}{2\pi} \right) ^{3/2}e^{-\beta\frac{m\mathbf{v^2}}{2}}d\mathbf{v}^3\\
+\Rightarrow \\
+\end{split}
+\end{equation}
+\begin{equation}\label{maxwell}
+\rho_e(v)=4\pi\left(\frac{\beta m}{2\pi}\right)^{3/2}v^2e^{-\beta \frac{mv^2}{2}}dv
+\end{equation}
+
+en donde se ha integrado sobre los ángulos $\theta$ y $\phi$ de las coordenadas esféricas para solo tener la dependencia en la magnitud de la velocidad. La ecuación (\ref{maxwell}) es la llamada \textbf{\textit{distribución de Maxwell}} para las velocidades de los electrones dentro del tubo de gas de descarga. 
+
+Utilizando la distribución de velocidades, el número promedio de electrones por unidad de volumen (ie, densidad de electrones $n_e$) que tienen una velocidad entre $v$ y $v+dv$ está dado simplemente multiplicando la ec. (\ref{maxwell}) por $n_e$:
+
+\begin{equation}
+f_e(v)dv=n_e4\pi\left(\frac{\beta m}{2\pi}\right)^{3/2}v^2e^{-\beta \frac{mv^2}{2}}dv
+\end{equation}
+
+Con estos elementos de física estadística se puede considerar ahora un poco más lo que pasa con la punta de Langmuir dentro del plasma. El objetivo es encontrar una ecuación o modelo que nos relacione la corriente que circula a través de la punta, el voltaje de la punta, la temperatura de los electrones y la densidad de electrones.
+
+La figura 3 es un esquema utilizado para calcular la cantidad promedio de electrones que golpean la superficie de la punta de área $A$ en un intervalo $\Delta t$.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{1.jpg}
+\caption{Electrones colisionando con la punta de Langmuir.}
+\end{figure}
+
+Observando la figura se puede notar que la cantidad promedio de golpes que recibe el área $A$ de la punta de Langmuir debe estar en función del volumen sombreado. Este volumen es $Av_x\Delta t$ (suponiendo que $x$ es la dirección perpendicular a $A$). Las otra dos componentes de la velocidad no contribuyen pues son paralelas al plano en el cual esta contenida el área $A$ por lo que a partir de la distribución de velocidades en coordenadas cartesianas dada por la ecuación (\ref{maxcart}), se calclula la cantidad promedio de electrones que colisionan con el área $A$.
+Para considerar solo la componente en $x$ de la ecuación (\ref{maxcart}), se integra la parte en $y$ y $z$. Obteniendo:
+\begin{equation*}
+n_e\left( \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}dv_y dv_y e^{\frac{-\beta m v_y^2 v_z^2}{2}} \right) \left(\frac{\beta m}{2\pi} \right) ^{3/2}e^{\frac{\beta m v_x^2}{2}}=n_e\left( \frac{2\pi}{\beta m} \right)^2 \left(\frac{\beta m}{2\pi} \right) ^{3/2}e^{\frac{\beta m v_x^2}{2}} 
+\end{equation*}
+\begin{equation*}
+\Rightarrow 
+\end{equation*}
+\begin{equation}\label{velx}
+\rho_e (v_x) =n_e\left( \frac{\beta m}{2 \pi } \right) ^{1/2} e^{-\frac{1}{2}mv_x^2}
+\end{equation}
+Con esta ecuación se puede calcular la cantidad promedio de electrones que golpean el área $A$ en el intervalo de tiempo $\Delta t$. Los electrones que lograrán colisionar son aquellos que poseean almenos una velocidad mímima $v_{min}$, pues si su velocidad $v$ es menor, en el intervalo $\Delta t$ no habrán logrado recorrer la distancia suficiente como para golpear el área $A$.  Como la ecuación (velx) representa la cantidad promedio de elctrones por unidad de volumen cuya componente $x$ de la velocidad está entre $v_x$ y $v_x+dv_x$, entonces el número de golpes que recibe la punta en el intervalo de tiempo $\Delta t$, está dado por la integral:
+\begin{equation*}
+\begin{split}
+numero \ de \ golpes &= \int_{v_{min}}^{\infty}dv_x\rho_e(v_x) A v_x \Delta t \\
+&=A\Delta t n_e \left( \frac{\beta m}{2\pi} \right) ^{1/2 } \int_{v_{min}}^{\infty} e^{1/2 m v_x^2}v_x dv_x \\
+&=A\Delta t  n_e \left( \frac{\beta m}{2\pi} \right) ^{1/2 } \frac{1}{m\beta} \int_{mv_{min}^2\beta/2}^{\infty}e^{-u}du\\
+\Rightarrow
+\end{split}
+\end{equation*}
+\begin{equation}\label{golpes}
+numero \ de \ golpes = A \Delta t \ n_e \left( \frac{kT}{2\pi m} \right)^{1/2} e^{-\frac{1}{2}\beta mv_{min}^2}
+\end{equation}
+
+Considerando que en la vecindad inmediata de la punta de Langmuir hay electrones que, aunque no poseen la velocidad mínima, logran colisionar con la punta, se hace la aproximación de $v_{min}\rightarrow 0$.
+se obtiene que $$ numero \ de \ golpes \rightarrow A \Delta t \ n_e  \left( \frac{kT}{2\pi m} \right)^{1/2} $$
+Por lo tanto la densidad e corriente $J_e$, definida por la cantidad de golpes  por unidad de volumen por unidad de tiempo es:
+\begin{equation}\label{J} 
+J_e=\frac{golpes}{A	\Delta t}=\frac{1}{4}\left(\frac{8kT}{\pi m} \right) ^{1/2} 
+\end{equation}.
+
+cfr. ec. (\ref{J1}).
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.7]{partes.jpg}
+\caption{Curva característica de punta de Langmuir.}
+\end{figure}
+
+La figura 4 es una curva característica de lo que se obtiene de realcionar la corriente que circula a través de la punta de Langmuir en función del voltaje aplicado. Vale la pena hacer breves comentarios hacerca de lo que ocurre en cada una de las regiones A, B, C, D que se pueden apreciar en la gráfica.
+
+A. Está región muestra una corriente positiva que se conoce como corriente de saturación de electrones.
+
+B. Cuando el voltaje en la punta es igual al voltaje aplicado en los electodos del tubo (conocido como voltaje de plasma $V_p$), la punta recoge tanto electrones como iones pero la cantidad de electrones que colecta por unidad de tiempo, es decir la corriente debida a los electrones es mucho mayor que la de los iones, por lo que se hace la apoximación de que la corriente eléctrica a través de la punta es solo debido a los electrones y por tanto, usando la ecuación (\ref{J}), se obtiene que aproximadamente en el voltaje de plasma, la corriente de la punta es 
+\begin{equation}\label{corriente}
+I_p=eA\frac{1}{4}n_e\left(\frac{8kT_e}{\pi m} \right) ^{1/2}
+\end{equation}
+con $e$ la carga del electrón y $T_e$ la temperatura de los electrones.
+
+C. Es en  esta regíon de la curva cuando el potencial en la punta es menor que $V_p$ y aquí la sonda comienza a repeler algunos electrones y solo los que tienen la energía cinética suficiente pueden golpear la punta. La velocidad mínima $v_{min}$ se puede aproximar con conservación de energía.
+$$\frac{1}{2}mv_{min}^2-eV_p=-eV$$
+$$\frac{1}{2}mv_{min}^2=e(V_p-V)$$
+en donde V es el voltaje que hay en la punta. Sustituyendo el la ecuación (\ref{corriente}) se llega a la expresión más importante del modelo teórico de la punta de Langmuir:
+\begin{equation}\label{curva}
+I(V)=eA\left( \frac{kT_e}{2\pi m} \right)^{1/2} e^{\frac{e(V_p-V)}{kT_e}}
+\end{equation}
+
+Para $V \ll V_p$, muy pocos electrones han adquirido la velocidad mínima. Cuando se tiene que el voltaje en la punta coincide con el voltaje flotante $V_f$, las corrientes de los electrones y iones son iguales y se cancelan entre sí.
+ 
+ D. En esta región la corriente es muy baja (del orden de $\mu A$) y es debida a los iones positivos (por ello en la curva de la figura 4 aparece como una corriente negativa). La corriente de iones permanece aproximadamente constante.
+ 
+ 
+
+
+
+\section{Desarrollo experimental}
+\section{Resultados}
+
+ 
+\section{Discusión}
+\cite{bueno}
+
+
+\section{Conclusiones y recomendaciones}
+
+
+\begin{thebibliography}{99}
+
+\bibitem{libro} Boris M. Smirnov; \textit{Theory of gas discharge plasma}; Springer; 2015.
+
+\bibitem{bueno} Kirkman, Tom; \textit{Advanced Physics Laboratory, ch. 5 Langmuir's Probe}; College of Saint Benedict and Saint John's University;  2015
+
+\bibitem{ayuda}  Merlino L. robert; \textit{Understanding Langmuir probe current-voltage characteristics}; Am. J. Phys. \textbf{75}(12), December 2007.
+
+\bibitem{inutil}   Braithwaite N. St. J.; \textit{Introduction to gas discharges}; Plasma Sources Sci. Technol. \textbf{9} 517-527; 2000
+
+\bibitem{buenisimo} Scott Donald E.; \textit{Primer on "Gas Discharges" (plasmas)}; University on Massacussets.
+
+\bibitem{00} Lamport, L.; \LaTeX{}; Addison-Wesley. 1996.
+
+\bibitem{landau} Landau, E. M. Lifshitz; \textit{Statistical Physics, Part 1} capítulo 3; Pergamon press; 1969
+ 
+\end{thebibliography}
+ \newpage
+ 
+ \section{Apéndice.}
+ \begin{table}[htbp]
+  \centering
+  \caption{resultados para las primeras fotos}
+    \begin{tabular}{|r|r|r|r|r|}
+    \toprule 
+    Voltaje [$kV$] & L. De Onda $\lambda$ & $\delta \lambda$ [nm] & Diámetro $D_1$ & Diámetro $D\_2$ \\
+    
+    $\pm 0.5 kV$ & $\pm 0.5nm$ &       & $\pm 0.5mm$ & $\pm 0.5mm$ \\
+    \midrule
+    2     & 0.863 & 0.042 & 3.635 & 5.994 \\
+    2.5   & 0.772 & 0.050 & 3.309 & 5.49 \\
+    2.7   & 0.742 & 0.053 & 2.869 & 5.204 \\
+    2.9   & 0.716 & 0.056 & 2.784 & 5.15 \\
+    3     & 0.704 & 0.057 & 2.732 & 5.045 \\
+    3.1   & 0.693 & 0.058 & 2.626 & 5.116 \\
+    3.3   & 0.672 & 0.061 & 2.886 & 4.899 \\
+    3.5   & 0.652 & 0.064 & 2.642 & 4.814 \\
+    3.7   & 0.634 & 0.067 & 2.432 & 4.669 \\
+    3.9   & 0.618 & 0.069 & 2.308 & 4.627 \\
+    4     & 0.610 & 0.071 & 2.421 & 4.412 \\
+    4.1   & 0.603 & 0.072 & -     & 4.548 \\
+    4.3   & 0.588 & 0.075 & -     & 4.464 \\
+    4.5   & 0.575 & 0.077 & -     & 4.193 \\
+    5     & 0.546 & 0.084 & -     & 4.01 \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}% 
+La incertidumbre asociada a $\lambda$, $\delta \lambda$, se calculó con la fórmula para propagación de incertidumbres:
+\large $$ \delta f =\sqrt[]{\sum_{i=1}^n (\frac{\partial f}{\partial x_i})^2(\delta x_i)^2 } $$ 
+
+con $f=f(x_1,...x_n)$.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Resultados para las segundas fotos.}
+    \begin{tabular}{|r|r|r|r|r|}
+    \toprule
+    Voltaje [$kV$] & L. De Onda $\lambda$ & $\delta \lambda [nm]$ & Diámetro $D_1$ & Diámetro $D_2$ \\
+    
+    $\pm 0.5 kV$ & $\pm 0.5nm$ &       & $\pm 0.5mm$ & $pm 0.5mm$ \\
+    \midrule
+    2     & 0.863 & 0.050 & 3.607 & 6.262 \\
+    2.5   & 0.772 & 0.053 & 3.282 & 5.78 \\
+    2.7   & 0.742 & 0.056 & 2.878 & 5.204 \\
+    2.9   & 0.716 & 0.057 & 2.783 & 5.15 \\
+    3     & 0.704 & 0.058 & 2.758 & 5.372 \\
+    3.1   & 0.693 & 0.061 & 2.643 & 5.116 \\
+    3.3   & 0.672 & 0.064 & 2.497 & 4.899 \\
+    3.5   & 0.652 & 0.067 & 2.638 & 4.622 \\
+    3.7   & 0.634 & 0.069 & 2.419 & 4.669 \\
+    3.9   & 0.618 & 0.071 & 2.275 & 4.627 \\
+    4     & 0.610 & 0.072 & 2.422 & 4.412 \\
+    4.1   & 0.603 & 0.075 & -     & 4.476 \\
+    4.3   & 0.588 & 0.077 & -     & 4.464 \\
+    4.5   & 0.575 & 0.084 & -     & 4.182 \\
+    5     & 0.546 & 0.083     &  -     & 4.01 \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}% 
+ 
+
+
+\end{document}
